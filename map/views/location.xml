@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="map_tree_view">
+        <field name="name">Lista localizaciones</field>
+        <field name="model">map.location</field>
+        <field name="arch" type="xml">
+            <tree string="map.location">
+                <field name="direccion"/>
+                <field name="latitude"/>
+                <field name="longitude"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="map_location_form">
+        <field name="name">Formulario de localizaciones</field>
+        <field name="model">map.location</field>
+        <field name="arch" type="xml">
+            <form string="Location">
+                <sheet>
+                    <div id="location_name">
+                        <field name="direccion" placeholder="Valor de la localización"/>
+                    </div>
+                    <div id="lat">
+                        <field name="latitude" placeholder="Valor de la Latitude"/>
+                    </div>
+                    <div id="long">
+                        <field name="longitude" placeholder="Valor de la Longitude"/>
+                    </div>
+                    <notebook>
+                        <page string="Map">
+                            <templates>
+                                <!-- CARGAR LAS LIBRERIAS DE LEAFLETJS -->
+                                <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+                                      integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+                                      crossorigin=""/>
+                                <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+                                        integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+                                        crossorigin=""></script>
+                                <!-- Cargar funcion javascript que instanciará el mapa -->
+                                <xpath expr="." position="inside">
+                                    <script type="text/javascript" src="/map/static/js/map.js"></script>
+                                </xpath>
+                                <!-- Boton que al pulsarlo mostrará el mapa en la parte inferior -->
+                                <input type="button" class="btn btn-primary btn-sm o_form_button_save" id="btn_load" onClick="load();" value="Cargar mapa"/>
+                                <!-- Establecer una altura fija donde se visualizará el mapa -->
+                                <div id="mapid" style="height:300px;"></div>
+                            </templates>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="map_location_view_search" model="ir.ui.view">
+        <field name="name">Busqueda localizaciones</field>
+        <field name="model">map.location</field>
+        <field name="arch" type="xml">
+            <search string="map.location">
+                <field name="direccion"/>
+                <field name="latitude"/>
+                <field name="longitude"/>
+            </search>
+        </field>
+    </record>
+</odoo>

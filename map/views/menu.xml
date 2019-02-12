@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem name="Plugin Mapa" id="location_root_menu"/>
+    <record model="ir.actions.act_window" id="action_map_location">
+        <field name="name">Locations</field>
+        <field name="res_model">map.location</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Locations" id="map_menu" parent="location_root_menu"
+              sequence="1" action="action_map_location"/>
+</odoo>
