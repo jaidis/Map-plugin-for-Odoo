@@ -13,6 +13,6 @@ class Locations(models.Model):
     def name_get(self):
         res = []
         for record in self:
-            name = record.direccion + ' - ' + record.poblacion + ' ' + record.provincia
+            name = record.direccion + ' - ' + record.poblacion + ' - ' + record.provincia
             res.append((record.id, name))
         return res

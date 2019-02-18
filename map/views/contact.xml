@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="tienda_clientes_view_tree" model="ir.ui.view">
+        <field name="name">Lista contactos</field>
+        <field name="model">map.contact</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="dni"/>
+                <field name="nombre"/>
+                <field name="apellidos"/>
+                <field name="direccion"/>
+                <field name="telefono"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="tienda_clientes_view_form" model="ir.ui.view">
+        <field name="name">Formulario de contactos</field>
+        <field name="model">map.contact</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="dni"/>
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                    <field name="direccion"/>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="tienda_clientes_view_search" model="ir.ui.view">
+        <field name="name">Busqueda contactos</field>
+        <field name="model">map.contact</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="dni"/>
+                <field name="nombre"/>
+                <field name="apellidos"/>
+                <field name="direccion"/>
+                <field name="telefono"/>
+                <field name="email"/>
+            </search>
+        </field>
+    </record>
+</odoo>

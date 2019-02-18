@@ -9,5 +9,5 @@
     'installable': True,
     'auto_install': False,
     'application': True,
-    'data': ['views/menu.xml', 'views/location.xml']
+    'data': ['views/menu.xml', 'views/location.xml', 'views/contact.xml']
 }
