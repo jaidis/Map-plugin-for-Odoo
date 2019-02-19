@@ -22,11 +22,19 @@
             <form string="Location">
                 <sheet>
                     <div id="location_name">
-                        <field name="direccion" placeholder="Valor de la localización"/>
+                        <b>
+                            <field name="direccion" placeholder="Valor de la localización"/>
+                        </b>
                     </div>
-                    <field name="poblacion" placeholder="Valor de la población"/>
-                    <field name="provincia" placeholder="Valor de la provincia"/>
-                    <field name="codPostal" placeholder="Valor del Código Postal"/>
+                    <div>
+                        <field name="poblacion" placeholder="Valor de la población"/>
+                    </div>
+                    <div>
+                        <field name="provincia" placeholder="Valor de la provincia"/>
+                    </div>
+                    <div>
+                        <field name="codPostal" placeholder="Valor del Código Postal"/>
+                    </div>
                     <div id="lat">
                         <field name="latitude" placeholder="Valor de la Latitude"/>
                     </div>
@@ -34,8 +42,8 @@
                         <field name="longitude" placeholder="Valor de la Longitude"/>
                     </div>
                     <notebook>
-                        <page string="Map">
-                            <templates>
+                        <page string="Mapa">
+                            <templates id="plantillaMapa">
                                 <!-- CARGAR LAS LIBRERIAS DE LEAFLETJS -->
                                 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
                                       integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -48,9 +56,9 @@
                                     <script type="text/javascript" src="/map/static/js/map.js"></script>
                                 </xpath>
                                 <!-- Boton que al pulsarlo mostrará el mapa en la parte inferior -->
-                                <input type="button" class="btn btn-primary btn-block o_form_button_save" id="btn_load" onClick="load();" value="Cargar mapa" style="margin-top:15px;margin-bottom:15px"/>
-                                <!-- Establecer una altura fija donde se visualizará el mapa -->
-                                <div id="mapid" style="height:300px;"></div>
+                                <input type="button" class="btn btn-primary btn-block o_form_button_save" id="btn_load"
+                                       onClick="load();" value="Cargar mapa"
+                                       style="margin-top:15px;margin-bottom:15px"/>
                             </templates>
                         </page>
                     </notebook>

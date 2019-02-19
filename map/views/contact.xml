@@ -5,6 +5,7 @@
         <field name="model">map.contact</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="foto" widget='image'/>
                 <field name="dni"/>
                 <field name="nombre"/>
                 <field name="apellidos"/>
@@ -21,6 +22,7 @@
         <field name="arch" type="xml">
             <form>
                 <group>
+                    <field name="foto" widget='image'/>
                     <field name="dni"/>
                     <field name="nombre"/>
                     <field name="apellidos"/>
@@ -37,6 +39,7 @@
         <field name="model">map.contact</field>
         <field name="arch" type="xml">
             <search>
+                <field name="foto" widget='image'/>
                 <field name="dni"/>
                 <field name="nombre"/>
                 <field name="apellidos"/>

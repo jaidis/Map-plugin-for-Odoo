@@ -9,6 +9,7 @@ class Contacts(models.Model):
     direccion = fields.Many2one('map.location', 'Localización', required=True)
     telefono = fields.Integer('Telefono', required=True)
     email = fields.Char('Email', required=True)
+    foto = fields.Binary("Imagen", help="Selecciona imagen aqui")
 
     def name_get(self):
         res = []
